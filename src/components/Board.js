@@ -7,11 +7,10 @@ const Board = ({className, diceValue, color, name, records, score}) => {
       <h2 className="Board-heading">{name}</h2>
       <Dice value={diceValue} color={color}/>
       <h2 className="Board-heading">기록</h2>
-      <p>{records.join(",")}</p>
+      <p className="Board-records">{records.join(",")}</p>
       <h2 className="Board-heading">총점</h2>
       <p>{score}</p>
     </div>
   );
 };
-
 export default Board;

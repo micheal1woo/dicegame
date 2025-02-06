@@ -8,6 +8,7 @@
   background-color: #272b38;
   justify-content: center; 
   
+  
 }
 
 .Board-winner {
@@ -24,4 +25,11 @@
   color: #888d9d;
   font-weight: 400;
   font-size: 18px;
+}
+
+.Board-records {
+  width: 100%;  /* Board 내부에서 가득 차게 설정 */
+  word-wrap: break-word;  /* 길어지면 자동 줄바꿈 */
+  text-align: center;  /* 중앙 정렬 */
+  font-size: 14px;
 }
