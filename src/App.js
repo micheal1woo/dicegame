@@ -6,8 +6,12 @@ import { useState } from "react";
 
 function App(){
   const [playerDice, setPlayerDice] = useState(1);
+  const [playerScore, setPlayerScore] = useState(0);
+  const [playerRecords, setPlayerRecords] = useState([]);
 
   const [opponentDice, setOpponentDice] = useState(1);
+  const [opponentScore, setOpponentScore] = useState(0);
+  const [opponentRecords, setOpponentRecords] = useState([]);
 
   const rollDice = () => {
     const newPlayerDice = Math.floor(Math.random() * 6) + 1;
@@ -15,16 +19,23 @@ function App(){
 
 
     setPlayerDice(newPlayerDice);
-    
+    setPlayerRecords([...playerRecords, newPlayerDice]);
+    setPlayerScore(playerScore + newPlayerDice);
+
+
     setOpponentDice(newOpponentDice);
-
-
-   
+    setOpponentRecords([...opponentRecords, newOpponentDice]);
+    setOpponentScore(opponentScore + newOpponentDice);
   };
 
   const resetGame = () => {
     setPlayerDice(1);
+    setPlayerScore(0);
+    setPlayerRecords([]);
+
     setOpponentDice(1);
+    setOpponentScore(0);
+    setOpponentRecords([]);
   };
 
 
@@ -38,8 +49,8 @@ function App(){
         <Button className="App-button" text="처음부터" color="red" onClick={resetGame}/>
       </div>
       <div className="App-boards">
-        <Board className="App-board" diceValue={playerDice} color="blue" name="나" score= "1" records="10"/>
-        <Board className="App-board" diceValue={opponentDice} color="red" name="상대방" score= "2" records="11"/>
+        <Board className="App-board" diceValue={playerDice} color="blue" name="나" score={playerScore} records={playerRecords}/>
+        <Board className="App-board" diceValue={opponentDice} color="red" name="상대방" score={opponentScore} records={opponentRecords}/>
       </div>
     </div>
   );
