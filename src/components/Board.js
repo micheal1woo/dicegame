@@ -1,10 +1,15 @@
 import Dice from "./Dice";
 import "../styles/Board.css";
 
-const Board = ({diceValue, color}) => {
+const Board = ({className, diceValue, color, name, records, score}) => {
   return (
-    <div> 
-      <Dice value={diceValue} color={color} />
+    <div className={`Board ${className}`}>  
+      <h2 className="Board-heading">{name}</h2>
+      <Dice value={diceValue} color={color}/>
+      <h2 className="Board-heading">기록</h2>
+      <p>{records}</p>
+      <h2 className="Board-heading">총점</h2>
+      <p>{score}</p>
     </div>
   );
 };

@@ -20,8 +20,8 @@ function App(){
         <Button className="App-button" text="처음부터" color="red"/>
       </div>
       <div className="App-boards">
-        <Board diceValue={2} color="blue"/>
-        <Board diceValue={2} color="red"/>
+        <Board className="App-board" diceValue={2} color="blue" name="나" score= "1" records="10"/>
+        <Board className="App-board" diceValue={2} color="red" name="상대방" score= "2" records="11"/>
       </div>
     </div>
   );
